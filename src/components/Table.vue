@@ -1,14 +1,14 @@
 <template>
   <div class="table">
     <el-row class="add-header">
-      <el-col :span="2">
+      <el-col :span="2" :offset="2">
         <el-button @click="handleClickAdd" type="primary" icon="el-icon-plus"
           >Добавить</el-button
         >
       </el-col>
     </el-row>
     <el-row>
-      <el-col :span="24">
+      <el-col :span="20" :offset="2">
         <el-table resizable="false" border :data="tableData">
           <el-table-column width="59" label="№" type="index"></el-table-column>
           <el-table-column
@@ -213,9 +213,10 @@ export default {
   },
 };
 </script>
-<style scoped lang="scss">
+<style lang="scss">
 .table {
   margin-top: 50px;
+  text-align: center;
   .add-header {
     margin-bottom: 20px;
   }
@@ -226,6 +227,11 @@ export default {
     flex-direction: row;
     justify-content: flex-end;
     margin-top: 50px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .el-dialog {
+    width: 95% !important;
   }
 }
 </style>
